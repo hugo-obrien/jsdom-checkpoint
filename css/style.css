@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Stengazeta';
+    src: url('../content/fonts/Stengazeta-Regular_5.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #000;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo img {
+    max-height: 150px;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #ff6b00;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition:
+            color 0.3s ease,
+            background-color 0.3s ease,
+            transform 0.2s ease;
+    display: inline-block;
+    font-family: 'Stengazeta', sans-serif;
+    line-height: 1.6;
+}
+
+.nav-link:hover {
+    color: #000000;
+    background-color: #ff6b00;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    border: 2px solid #ff6b00;
+    border-radius: 0.5rem;
+    padding: calc(0.5rem - 2px) 1rem;
+    background-color: transparent;
+    transition: none;
+}
+.nav-link.active:hover {
+    color: #ff6b00;
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 10%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#cta-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #00a8ff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cta-button:hover {
+    background-color: #008cd6;
+}
+
+.features, .games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 10%;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.game-card, .member {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #222;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Анимации */
+.fadeIn {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.slideUp {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.zoomIn {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
