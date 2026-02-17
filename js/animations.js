@@ -38,22 +38,37 @@ function setupButtonAnimation() {
 }
 
 function setupKeyboardControls() {
+    const pages = ['index.html', 'games.html', 'about.html']
+
     document.addEventListener("keydown", (e) => {
-        if (e.key === 'e' || e.key === 'E') {
-            const button = document.getElementById("cta-button");
-            if (button) {
-                button.click();
-                alert('Добро пожаловать в мир Vain Labor!')
-            }
-        }
+        let currentPath = window.location.pathname;
+        let currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+        console.log(currentPage);
+
+        let currentIndex = pages.indexOf(currentPage);
+
 
         if (e.key === 'ArrowRight') {
-            window.location.href = 'games.html'
+            //window.location.href = 'games.html'
+            currentIndex++;
         }
 
         if (e.key === 'ArrowLeft') {
-            window.location.href = 'about.html';
+            //window.location.href = 'about.html';
+            currentIndex--;
         }
+
+        if (currentIndex < 0) {
+            currentIndex =  pages.length - 1;
+        }
+        if (currentIndex >= pages.length) {
+            currentIndex = 0;
+        }
+
+        let page = pages[currentIndex];
+        console.log(currentIndex + " " + page);
+
+        window.location.href = page;
     });
 }
 
