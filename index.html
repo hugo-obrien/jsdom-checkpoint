@@ -10,6 +10,10 @@
 
 <main class="main">
     <section class="hero">
+        <div class="parallax-container">
+            <div class="parallax-layer left" aria-hidden="true"></div>
+            <div class="parallax-layer right" aria-hidden="true"></div>
+        </div>
         <h1>Создаем игры с душой</h1>
         <p>Инди-студия, которая верит в силу истории и геймплея.</p>
         <button id="cta-button">Начать приключение</button>
@@ -28,6 +32,14 @@
             <h3>Любовь к деталям</h3>
             <p>Мы вкладываем душу в каждый пиксель</p>
         </div>
+        <div class="feature-card" data-anim="fadeIn">
+            <h3>Любовь к карточкам</h3>
+            <p>А еще мы любим карточки с фичами</p>
+        </div>
+        <div class="feature-card" data-anim="fadeIn">
+            <h3>Нужно больше карточек</h3>
+            <p>Нет, серьёзно, еще больше</p>
+        </div>
     </section>
 </main>
 
@@ -36,19 +48,6 @@
 <script src="js/main.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/components-loader.js"></script>
-<!--<script>
-    fetch('../content/components/header.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
-            updateActiveNavLink();
-        });
-
-    fetch('../content/components/footer.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('footer-placeholder').innerHTML = html;
-        });
-</script>-->
+<script src="js/parallax.js"></script>
 </body>
 </html>
