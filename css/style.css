@@ -90,53 +90,29 @@ body {
     box-shadow: none;
 }
 
-.hero {
-    position: relative;
-    overflow: hidden;
-    height: 300px;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        height: 150px;
-    }
-}
-
 .parallax-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    max-height: 300px;
+    overflow: hidden;
 }
-
-.parallax-layer {
+.parallax-background {
     position: absolute;
-    top: 0;
     height: 100%;
-    width: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+    min-width: 100%;
+    user-select: none;
 }
-
-.parallax-layer.left {
-    left: 0;
-    background-image: url('../content/img/parallax/3.png');
-    transform-origin: left center;
-}
-.parallax-layer.right {
-    right: 0;
-    background-image: url('../content/img/parallax/4.png');
-    transform-origin: right center;
+.content {
+    position: relative;
+    z-index: 10;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+    text-shadow: 0 0 10px #333333;
 }
 
 #cta-button {

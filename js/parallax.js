@@ -1,23 +1,25 @@
-const leftLayer = document.querySelector('.parallax-layer.left');
-const rightLayer = document.querySelector('.parallax-layer.right');
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('parallaxContainer');
+    const background = document.getElementById('parallaxBg');
 
-function parallaxEffect(e) {
-    const cursorX = e.clientX;
-    const cursorY = e.clientY;
+    if (background.complete) {
+        initParallax();
+    } else {
+        background.onload = initParallax;
+    }
 
-    const windowWidth = window.innerWidth;
-    const normalizedX = cursorX / windowWidth;
+    function initParallax() {
 
-    const strength = 20;
-    const leftOffsetX = -strength * normalizedX;
-    const rightOffsetX = strength * (1 - normalizedX);
+        container.addEventListener('mousemove', function (e) {
+            const backgroundWidth = background.width;
+            const windowWidth = window.innerWidth;
+            const maxOffset = (background.width - windowWidth) / 2;
 
-    leftLayer.style.transform = `translateX(${leftOffsetX}px)`;
-    rightLayer.style.transform = `translateX(${rightOffsetX}px)`;
-}
-
-document.addEventListener('mousemove', parallaxEffect);
-document.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
-    parallaxEffect(touch);
+            const mouseX = e.clientX;
+            const normalizedMouseX = (mouseX / windowWidth) * 2 - 1;
+            const invertedMouseX = - normalizedMouseX;
+            const currentOffset = maxOffset * invertedMouseX;
+            background.style.transform = `translateX(calc(-50% + ${currentOffset}px))`;
+        });
+    }
 });
