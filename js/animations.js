@@ -78,7 +78,7 @@ function setupScrollHeader() {
     let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+        const currentScroll = window.scrollY;
 
         if (currentScroll > lastScroll && currentScroll > 100) {
             // Прокрутка вниз — скрываем заголовок
