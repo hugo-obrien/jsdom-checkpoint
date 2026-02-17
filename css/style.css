@@ -90,31 +90,7 @@ body {
     box-shadow: none;
 }
 
-.parallax-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.parallax-background {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: none;
-    min-width: 100%;
-    user-select: none;
-}
-.content {
-    position: relative;
-    z-index: 10;
-    color: white;
-    text-align: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    text-shadow: 0 0 10px #333333;
-}
+
 
 #cta-button {
     margin-top: 1rem;
@@ -127,26 +103,11 @@ body {
     transition: background-color 0.3s;
 }
 
-#cta-button:hover {
-    background-color: #008cd6;
-    transform: scale(1.05);
-}
-
 .features, .games-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 3rem 10%;
-}
-
-.feature-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
 }
 
 .game-card, .member {

@@ -41,34 +41,30 @@ function setupKeyboardControls() {
     const pages = ['index.html', 'games.html', 'about.html']
 
     document.addEventListener("keydown", (e) => {
-        let currentPath = window.location.pathname;
-        let currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-        console.log(currentPage);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            let currentPath = window.location.pathname;
+            let currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            let currentIndex = pages.indexOf(currentPage);
 
-        let currentIndex = pages.indexOf(currentPage);
+            if (e.key === 'ArrowRight') {
+                //window.location.href = 'games.html'
+                currentIndex++;
+            }
 
+            if (e.key === 'ArrowLeft') {
+                //window.location.href = 'about.html';
+                currentIndex--;
+            }
 
-        if (e.key === 'ArrowRight') {
-            //window.location.href = 'games.html'
-            currentIndex++;
+            if (currentIndex < 0) {
+                currentIndex =  pages.length - 1;
+            }
+            if (currentIndex >= pages.length) {
+                currentIndex = 0;
+            }
+
+            window.location.href = pages[currentIndex];
         }
-
-        if (e.key === 'ArrowLeft') {
-            //window.location.href = 'about.html';
-            currentIndex--;
-        }
-
-        if (currentIndex < 0) {
-            currentIndex =  pages.length - 1;
-        }
-        if (currentIndex >= pages.length) {
-            currentIndex = 0;
-        }
-
-        let page = pages[currentIndex];
-        console.log(currentIndex + " " + page);
-
-        window.location.href = page;
     });
 }
 

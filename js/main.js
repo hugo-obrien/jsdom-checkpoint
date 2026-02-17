@@ -36,7 +36,7 @@ function setupSmoothScroll() {
     })
 }
 
-function setupFormHandlers() {
+/*function setupFormHandlers() {
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
@@ -46,7 +46,7 @@ function setupFormHandlers() {
             this.reset();
         })
     })
-}
+}*/
 
 class ModalManager {
     constructor() {
