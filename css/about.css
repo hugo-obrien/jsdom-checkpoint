@@ -4,12 +4,20 @@
     padding: 3rem 10%;
 }
 
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
 .company-description {
+    flex: 1 1 60%;
+    min-width: 300px;
     background-color: white;
     padding: 2.5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 3rem;
+    /*margin-bottom: 3rem;*/
     border-left: 5px solid #ff6b00;
 }
 
@@ -60,29 +68,16 @@
     margin-top: 1.5rem;
 }
 
-/*.member {
-    max-width: 400px;
-    margin: 0 auto 3rem auto;
-    text-align: center;
+.team {
+    flex: 1 1 35%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
 }
-.member img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.member h3 {
-    margin-top: 1rem;
-    font-size: 1.8rem;
-    color: #222;
-}
-.member p {
-    padding: 0 1rem 1.5rem 1rem;
-    color: #666;
-}*/
 
 .member {
     max-width: 400px;
-    margin: 0 auto 3rem auto;
+    width: 100%;
     text-align: center;
     background-color: white;
     border-radius: 1rem;
@@ -90,6 +85,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-bottom: 3px solid #ff6b00;
+    /*margin: 0 auto 3rem auto;*/
 }
 
 .member:hover {
@@ -250,8 +246,15 @@
     .about-section {
         padding: 2rem 5%;
     }
+    .about-container {
+        flex-direction: column;
+    }
     .contact-form-section {
         padding: 2rem 1.5rem;
+    }
+    .company-description, .team {
+        flex: 1 1 100%;
+        min-width: auto;
     }
     .company-description h1 {
         font-size: 1.8rem;
