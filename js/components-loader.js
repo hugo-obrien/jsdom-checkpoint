@@ -1,12 +1,12 @@
-fetch('../content/components/header.html')
+fetch('content/components/header.html')
     .then(res => res.text())
     .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
         updateActiveNavLink();
         setupScrollHeader();
-    })
+    });
 
-fetch('../content/components/footer.html')
+fetch('content/components/footer.html')
     .then(res => res.text())
     .then(html => {
         document.getElementById('footer-placeholder').innerHTML = html;
