@@ -57,13 +57,6 @@ const modalManager = new ModalManager();
 function initApp() {
     setupSmoothScroll();
 
-    const demoBtn = document.getElementById('demo-modal');
-    if (demoBtn) {
-        demoBtn.addEventListener('click', (e) => {
-            modalManager.open('<h2>Hello world!</h2><p>This is the kind of modal window</p>');
-        })
-    }
-
     console.log('Vain labor site initialized');
 }
 

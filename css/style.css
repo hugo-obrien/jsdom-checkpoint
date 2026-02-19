@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-p {
-    text-align: justify;
-}
-
 @font-face {
     font-family: 'Stengazeta';
     src: url('../content/fonts/Stengazeta-Regular_5.ttf') format('truetype');
@@ -112,14 +108,14 @@ body {
     transition: background-color 0.3s;
 }
 
-.features, .games-grid {
+.features{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 3rem 10%;
 }
 
-.game-card, .member {
+.member {
     background-color: white;
     border-radius: 1rem;
     overflow: hidden;
