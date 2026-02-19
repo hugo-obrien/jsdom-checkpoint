@@ -1,23 +1,3 @@
-function updateActiveNavLink() {
-    console.log("Update active nav link called");
-    const navItems = document.querySelectorAll('.nav-link');
-    const currentPath = window.location.pathname;
-
-    navItems.forEach(item => {
-        let linkPath = (new URL(item.href)).pathname;
-
-        console.log('link path: ' + linkPath + ', current path: ' + currentPath);
-
-        if (linkPath === currentPath
-            || (linkPath.endsWith('/index.html') && currentPath.endsWith('/'))) {
-            console.log('Match!')
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    })
-}
-
 function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -35,18 +15,6 @@ function setupSmoothScroll() {
         });
     })
 }
-
-/*function setupFormHandlers() {
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            alert("Данные отправлены (на самом деле нет, но мы работаем над этим)");
-            this.reset();
-        })
-    })
-}*/
 
 class ModalManager {
     constructor() {
@@ -87,9 +55,7 @@ class ModalManager {
 const modalManager = new ModalManager();
 
 function initApp() {
-    updateActiveNavLink();
     setupSmoothScroll();
-    setupFormHandlers();
 
     const demoBtn = document.getElementById('demo-modal');
     if (demoBtn) {
@@ -105,5 +71,4 @@ document.addEventListener('DOMContentLoaded', initApp);
 
 window.VainLabor = {
     modalManager: modalManager,
-    updateNav: updateActiveNavLink
 };

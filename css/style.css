@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+p {
+    text-align: justify;
+}
+
 @font-face {
     font-family: 'Stengazeta';
     src: url('../content/fonts/Stengazeta-Regular_5.ttf') format('truetype');
@@ -39,6 +43,11 @@ body {
     padding-right: 10%;
     background-color: #000;
     color: white;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
 }
 
 .logo {

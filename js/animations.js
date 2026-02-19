@@ -84,32 +84,9 @@ function setupHoverEffects() {
     });
 }
 
-function setupScrollHeader() {
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.header');
-        if (!header) {
-            return;
-        }
-
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            // Прокрутка вниз — скрываем заголовок
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // Прокрутка вверх — показываем заголовок
-            header.style.transform = 'translateY(0)';
-        }
-
-        lastScroll = currentScroll;
-        console.log('current scroll : ' + currentScroll);
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     animateOnScroll();
     setupButtonAnimation();
     setupKeyboardControls();
     setupHoverEffects();
-    setupScrollHeader();
 });
