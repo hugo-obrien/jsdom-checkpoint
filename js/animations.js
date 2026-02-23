@@ -47,12 +47,10 @@ function setupKeyboardControls() {
             let currentIndex = pages.indexOf(currentPage);
 
             if (e.key === 'ArrowRight') {
-                //window.location.href = 'games.html'
                 currentIndex++;
             }
 
             if (e.key === 'ArrowLeft') {
-                //window.location.href = 'about.html';
                 currentIndex--;
             }
 

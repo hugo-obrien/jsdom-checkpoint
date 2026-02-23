@@ -23,25 +23,24 @@ class ModalManager {
 
     open(content) {
         this.modal = document.createElement('div')
+        fetch('content/components/' + content)
+            .then(res => res.text())
+            .then(html => this.modal.innerHTML = html)
+            .then(() => {
+                this.modal.querySelector('.modal-close').addEventListener('click', () => {
+                    this.close();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.close();
+                    }
+                });
+            })
+        ;
         this.modal.className = 'modal-overlay';
-        this.modal.innerHTML = `
-            <div class="modal-content">
-                <button class="modal-close">&times;</button>
-                <div clas="modal-body">${content}</div>
-            </div>
-        `;
 
         document.body.appendChild(this.modal);
-
-        this.modal.querySelector('.modal-close').addEventListener('click', () => {
-            this.close();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                this.close();
-            }
-        });
     }
 
     close() {

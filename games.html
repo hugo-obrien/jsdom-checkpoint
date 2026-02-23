@@ -5,6 +5,7 @@
     <title>Vain Labor</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body class="page-home">
 <div id="header-placeholder"></div>
@@ -13,22 +14,25 @@
     <section class="cards-grid">
         <div class="game-card" data-anim="slideUp">
             <div class="card-preview">
-                <img class="preview-img" src="content/img/games/game1.webp" alt="game 1">
+                <img class="preview-img" src="content/img/games/shmup.png" alt="Space Shoot`Em`Up">
             </div>
             <div class="card-content">
-                <h2 class="game-title">Game 1</h2>
-                <p class="game-desc">Game 1 a asdfasldj asdlfjkas alskdjhf asldkjfh alskjdfhlas asldkjfhasldkj aslkdjfh</p>
-                <a href="#" class="details-button">More</a>
+                <h2 class="game-title">SHMUP (Space shoot`em`up)</h2>
+                <p class="game-desc">Космический shoot'em'up в духе классических аркадных автоматов. Управляйте истребителем,
+                прорывайтесь сквозь орды инопланетных захватчиков, собирайте бонусы и сразитесь с гигантскими боссами, на
+                фоне звездных просторов.</p>
+                <button class="details-button" type="button" onclick="modalManager.open('shmup-popup.html')">More</button>
             </div>
         </div>
         <div class="game-card" data-anim="slideUp">
             <div class="card-preview">
-                <img class="preview-img" src="content/img/games/game2.jpg" alt="game 2">
+                <img class="preview-img" src="content/img/games/prospector-solitaire.png" alt="Prospector Solitaire">
             </div>
             <div class="card-content">
-                <h2 class="game-title">Game 2</h2>
-                <p class="game-desc">Game 2</p>
-                <a href="#" class="details-button">More</a>
+                <h2 class="game-title">Prospector Solitaire</h2>
+                <p class="game-desc">Классический пасьянс "Three peaks" с легким привкусом золотой лихорадки. Проверьте свою
+                удачу и попробуйте набрать наибольшее количество очков.</p>
+                <button class="details-button" type="button" onclick="modalManager.open('prospector-solitaire.popup.html')">More</button>
             </div>
         </div>
     </section>
